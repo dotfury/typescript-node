@@ -5,7 +5,7 @@ const quoteSchema = new Schema(
     name: { type: String, required: true },
     text: { type: String, required: true }
   },
-  { versionKey: '_version' }
+  { versionKey: '_version', timestamps: true }
 );
 
 interface Quote extends mongoose.Document {

@@ -8,7 +8,7 @@ import quotesRouter from './routes/quotes';
 const PORT = config.SERVER.port;
 const app = Express();
 
-mongoose.connect(config.MONGO_DB.url, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(config.MONGO_DB.url, config.MONGO_OPTIONS);
 const client = mongoose.connection;
 
 client.once('open', () => {

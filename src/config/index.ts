@@ -7,6 +7,16 @@ const DB_USER = process.env.MONGODB_USER_NAME;
 const DB_PASSWORD = process.env.MONGODB_PASSWORD;
 const DB_NAME = process.env.MONGODB_DB_NAME;
 
+const MONGO_OPTIONS = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  socketTimeoutMS: 30000,
+  keepAlive: true,
+  poolSize: 50,
+  autoIndex: false,
+  retryWrites: false
+};
+
 const MONGO_DB = {
   user: DB_USER,
   password: DB_PASSWORD,
@@ -20,6 +30,7 @@ const SERVER = {
 
 const config = {
   MONGO_DB,
+  MONGO_OPTIONS,
   SERVER
 };
 
