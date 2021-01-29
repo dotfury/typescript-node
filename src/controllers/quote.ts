@@ -4,7 +4,7 @@ import Quote from '../models/quote';
 
 const getQuotes = (req: Request, res: Response, next: NextFunction) => {
   Quote.find()
-    .then((result: any) => {
+    .then((result: {}) => {
       return res.status(200).json(result);
     })
     .catch((error: Error) => res.json({ message: error.message, error }));
@@ -21,7 +21,7 @@ const createQuote = (req: Request, res: Response, next: NextFunction) => {
 
   quote
     .save()
-    .then((result: any) => {
+    .then((result: {}) => {
       return res.status(201).json({ quote: result });
     })
     .catch((error: Error) => {
