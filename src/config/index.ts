@@ -6,6 +6,7 @@ const PORT = process.env.PORT;
 const DB_USER = process.env.MONGODB_USER_NAME;
 const DB_PASSWORD = process.env.MONGODB_PASSWORD;
 const DB_NAME = process.env.MONGODB_DB_NAME;
+const SECRET_KEY = process.env.SECRET_KEY || 'empty_key';
 
 const MONGO_OPTIONS = {
   useUnifiedTopology: true,
@@ -31,7 +32,8 @@ const SERVER = {
 const config = {
   MONGO_DB,
   MONGO_OPTIONS,
-  SERVER
+  SERVER,
+  SECRET_KEY
 };
 
 export default config;

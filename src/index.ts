@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import config from './config';
 
 // routes
-import quotesRouter from './routes/quotes';
+import usersRouter from './routes/auth';
 
 const PORT = config.SERVER.port;
 const app = Express();
@@ -20,7 +20,7 @@ client.on('error', (error) => {
 });
 
 app.use(Express.json());
-app.use('/quotes', quotesRouter);
+app.use('/users', usersRouter);
 
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
