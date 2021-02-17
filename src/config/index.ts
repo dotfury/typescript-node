@@ -6,7 +6,15 @@ const PORT = process.env.PORT;
 const DB_USER = process.env.MONGODB_USER_NAME;
 const DB_PASSWORD = process.env.MONGODB_PASSWORD;
 const DB_NAME = process.env.MONGODB_DB_NAME;
-const SECRET_KEY = process.env.SECRET_KEY || 'empty_key';
+const TOKEN_SECRET_KEY = process.env.TOKEN_SECRET_KEY || 'empty_key';
+const TOKEN_ISSUER = process.env.TOKEN_ISSUER || 'token_issuer';
+const TOKEN_SECRET_EXPIRE_TIME = process.env.TOKEN_SECRET_EXPIRE_TIME || 3600;
+
+const JWT = {
+  secret: TOKEN_SECRET_KEY,
+  expire_time: TOKEN_SECRET_EXPIRE_TIME,
+  issuer: TOKEN_ISSUER
+};
 
 const MONGO_OPTIONS = {
   useUnifiedTopology: true,
@@ -33,7 +41,7 @@ const config = {
   MONGO_DB,
   MONGO_OPTIONS,
   SERVER,
-  SECRET_KEY
+  JWT
 };
 
 export default config;
